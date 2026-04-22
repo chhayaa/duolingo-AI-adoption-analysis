@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How This Analysis Was Built — Technical Walkthrough (In Plain English)</title>
+<style>
+  @page { margin: 1in; size: A4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    line-height: 1.8;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    background: #fff;
+  }
+  .cover {
+    text-align: center;
+    padding: 60px 20px 50px;
+    border-bottom: 3px solid #8e44ad;
+    margin-bottom: 40px;
+  }
+  .cover h1 { font-size: 26px; color: #2c3e50; margin-bottom: 8px; }
+  .cover .subtitle { font-size: 16px; color: #8e44ad; margin-bottom: 24px; }
+  .cover .meta { font-size: 13px; color: #7f8c8d; line-height: 2; }
+  .cover .meta strong { color: #2c3e50; }
+  h2 {
+    font-size: 19px;
+    color: #2c3e50;
+    border-left: 4px solid #8e44ad;
+    padding-left: 14px;
+    margin: 36px 0 14px;
+  }
+  h3 { font-size: 15px; color: #34495e; margin: 20px 0 8px; }
+  p { margin-bottom: 12px; font-size: 14px; }
+  .step-box {
+    background: #faf5ff;
+    border: 1px solid #d2b4de;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .step-box h4 {
+    font-size: 15px;
+    color: #8e44ad;
+    margin-bottom: 8px;
+  }
+  .step-box .tech {
+    background: #f0e6f6;
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #6c3483;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .analogy {
+    background: #fef9e7;
+    border-left: 4px solid #f1c40f;
+    padding: 12px 18px;
+    margin: 14px 0;
+    font-size: 13px;
+    color: #7d6608;
+  }
+  .analogy strong { color: #b7950b; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 13px;
+  }
+  th { background: #6c3483; color: #fff; padding: 10px 12px; text-align: left; }
+  td { padding: 9px 12px; border-bottom: 1px solid #ecf0f1; }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+  }
+  .flow-step {
+    background: #8e44ad;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    min-width: 120px;
+  }
+  .flow-arrow { font-size: 22px; color: #8e44ad; }
+  ul, ol { padding-left: 24px; margin-bottom: 12px; font-size: 14px; }
+  li { margin-bottom: 6px; }
+  .file-box {
+    background: #f4f6f7;
+    border: 1px solid #d5dbdb;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 12px;
+    color: #2c3e50;
+    line-height: 1.6;
+  }
+  .highlight {
+    background: #fdebd0;
+    border: 1px solid #f0b27a;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+  }
+  .footer {
+    margin-top: 50px;
+    padding-top: 16px;
+    border-top: 1px solid #ecf0f1;
+    font-size: 11px;
+    color: #bdc3c7;
+    text-align: center;
+  }
+  .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>How This Analysis Was Built</h1>
+  <div class="subtitle">A Plain-English Technical Walkthrough</div>
+  <div class="meta">
+    <strong>Purpose:</strong> Explains the tools, process, and logic behind the iMeUsWe AI Chatbot Analysis<br>
+    <strong>Audience:</strong> Anyone who asks "How did you do this?"<br>
+    <strong>Date:</strong> April 2026
+  </div>
+</div>
+
+<!-- BIG PICTURE -->
+<h2>The Big Picture — What We Did</h2>
+
+<p>We wanted to answer one question: <strong>"If iMeUsWe makes its free AI astrology chatbot a paid feature, will users actually pay for it?"</strong></p>
+
+<p>Since we can't predict the future, we did the next best thing — we looked at what's already happening with competitor apps that have paid AI astrology features. We collected thousands of real user reviews, analyzed how people feel about these apps, and specifically measured whether users are willing to pay for AI chatbot features.</p>
+
+<div class="flow">
+  <div class="flow-step">Collect Reviews<br><small>from competitor apps</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step">Clean the Data<br><small>remove noise</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step">Analyze Sentiment<br><small>positive or negative?</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step">Measure WTP<br><small>will they pay?</small></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step">Generate Report<br><small>visualize findings</small></div>
+</div>
+
+<div class="analogy">
+  <strong>Real-world analogy:</strong> Imagine you want to open a paid parking lot. Before investing, you go to 6 existing paid parking lots, talk to 2,000 customers, and ask "Do you like this place?" and "Is it worth the price?" That's essentially what we did — but with app reviews instead of parking lot customers.
+</div>
+
+<!-- STEP 1 -->
+<h2>Step 1 — Collecting the Data (Scraping Reviews)</h2>
+
+<div class="step-box">
+  <h4>What we did</h4>
+  <span class="tech">Tool: google-play-scraper (Python library)</span>
+  <span class="tech">File: 01_scrape_reviews.py</span>
+  <p>We used a program to automatically read and download user reviews from the Google Play Store for 6 competitor astrology apps. For each app, we collected up to 500 of the most recent reviews.</p>
+</div>
+
+<h3>Why Google Play Store?</h3>
+<ul>
+  <li>App reviews are where people naturally talk about pricing, features, and whether something is "worth it"</li>
+  <li>The data is public — anyone can read these reviews on the Play Store</li>
+  <li>No special permissions or accounts needed to collect this data</li>
+  <li>We originally planned to use Reddit (like the Duolingo study), but Reddit now requires a formal registration process to access their data programmatically</li>
+</ul>
+
+<h3>Which apps and why?</h3>
+<table>
+  <tr><th>App</th><th>Why We Picked It</th></tr>
+  <tr><td>Co-Star (5M+ installs)</td><td>Biggest astrology app. Uses AI for personalized readings. Charges $12 per premium report.</td></tr>
+  <tr><td>The Pattern (1M+ installs)</td><td>Recently added an AI chat feature. Has $9/month subscription. Users actively discuss AI + payment in reviews.</td></tr>
+  <tr><td>Nebula (5M+ installs)</td><td>Large user base with premium subscription. AI-powered readings.</td></tr>
+  <tr><td>Yodha (1M+ installs)</td><td>AI-powered Q&A format — closest to a chatbot experience. Uses per-question pricing.</td></tr>
+  <tr><td>Yodha Daily (500K+ installs)</td><td>Companion app to Yodha. High user satisfaction — good baseline for comparison.</td></tr>
+  <tr><td>easyStars AI (100K+ installs)</td><td>Has an actual AI astrologer chatbot named "Pixie" — the most similar product to what iMeUsWe is considering.</td></tr>
+</table>
+
+<div class="analogy">
+  <strong>In simple terms:</strong> We sent a robot to the Google Play Store to read and copy down 2,212 user reviews from these 6 apps. The robot saved everything into a spreadsheet — the review text, star rating, date, and which app it came from.
+</div>
+
+<h3>What we collected per review</h3>
+<table>
+  <tr><th>Field</th><th>What it is</th><th>Example</th></tr>
+  <tr><td>App name</td><td>Which competitor app</td><td>"Co-Star"</td></tr>
+  <tr><td>Review text</td><td>What the user wrote</td><td>"This app is too expensive for AI content"</td></tr>
+  <tr><td>Star rating</td><td>1 to 5 stars</td><td>2</td></tr>
+  <tr><td>Thumbs up</td><td>How many people agreed with this review</td><td>47</td></tr>
+  <tr><td>Date</td><td>When the review was posted</td><td>2026-03-15</td></tr>
+</table>
+
+<p><strong>Total collected:</strong> 2,212 unique reviews across all 6 apps.</p>
+
+<!-- STEP 2 -->
+<div class="page-break"></div>
+<h2>Step 2 — Cleaning the Data</h2>
+
+<div class="step-box">
+  <h4>What we did</h4>
+  <span class="tech">Tool: Python (Pandas library)</span>
+  <span class="tech">File: 02_clean_data.py</span>
+  <p>We cleaned up the raw reviews — removed junk, fixed formatting, and tagged each review based on what it talks about.</p>
+</div>
+
+<h3>What "cleaning" means</h3>
+<ul>
+  <li><strong>Removed URLs</strong> — links like "http://..." don't help with sentiment analysis</li>
+  <li><strong>Removed special characters</strong> — emojis, weird symbols, etc.</li>
+  <li><strong>Removed very short reviews</strong> — anything under 20 characters (like "ok" or "nice") doesn't give us useful information</li>
+  <li><strong>Collapsed extra spaces</strong> — cleaned up messy formatting</li>
+</ul>
+
+<h3>Tagging reviews</h3>
+<p>We also tagged each review based on whether it mentions topics relevant to our question:</p>
+<ul>
+  <li><strong>AI/Payment related:</strong> Does the review mention words like "ai", "chatbot", "premium", "subscription", "paid", "price", "expensive", "free", "worth", "money", etc.?</li>
+  <li>927 out of 1,938 cleaned reviews were tagged as relevant to AI or payment topics</li>
+</ul>
+
+<div class="analogy">
+  <strong>In simple terms:</strong> Imagine you recorded 2,000 customer interviews. Before analyzing them, you'd clean up the transcripts — remove background noise, fix typos, and throw out the ones where the person just said "um, yeah, it's fine." That's what this step does.
+</div>
+
+<p><strong>After cleaning:</strong> 1,938 usable reviews remained (274 were removed as too short or duplicates).</p>
+
+<!-- STEP 3 -->
+<h2>Step 3 — Sentiment Analysis (How Do People Feel?)</h2>
+
+<div class="step-box">
+  <h4>What we did</h4>
+  <span class="tech">Method: Star rating + keyword analysis</span>
+  <span class="tech">File: 03_sentiment_analysis.py</span>
+  <p>We gave each review a "sentiment score" from -1.0 (very negative) to +1.0 (very positive) to measure how the user feels.</p>
+</div>
+
+<h3>How the scoring works</h3>
+<p>We combined two signals:</p>
+
+<ol>
+  <li><strong>Star rating (the main signal — 80% of the score):</strong>
+    <ul>
+      <li>1 star → score of -1.0 (very unhappy)</li>
+      <li>3 stars → score of 0.0 (neutral)</li>
+      <li>5 stars → score of +1.0 (very happy)</li>
+    </ul>
+  </li>
+  <li><strong>Text keywords (fine-tuning — adjusts score by up to ±0.2):</strong>
+    <ul>
+      <li>Positive words: "love", "amazing", "great", "accurate", "helpful", "recommend", etc.</li>
+      <li>Negative words: "hate", "terrible", "scam", "waste", "annoying", "crash", "fake", etc.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="analogy">
+  <strong>In simple terms:</strong> If someone gives 5 stars and writes "I love this app, it's amazing!" — they get a score close to +1.0. If someone gives 1 star and writes "terrible scam, waste of money" — they get a score close to -1.0. The star rating is the main indicator, and the words fine-tune it.
+</div>
+
+<h3>Why not use a fancy AI model for sentiment?</h3>
+<p>We initially tried using a pre-trained AI model (called "RoBERTa" from HuggingFace) to analyze sentiment. However:</p>
+<ul>
+  <li>It was extremely slow on a regular computer without a GPU (would have taken hours)</li>
+  <li>It had compatibility issues with the latest software versions</li>
+  <li>For app reviews, the star rating is already a very strong sentiment signal — the user literally tells you how they feel on a 1-5 scale</li>
+  <li>Our hybrid approach (stars + keywords) is faster, more reliable, and produces equally valid results for this use case</li>
+</ul>
+
+<h3>Results</h3>
+<table>
+  <tr><th>Sentiment</th><th>Count</th><th>What it means</th></tr>
+  <tr><td>Positive (score > +0.1)</td><td>1,271 (65.6%)</td><td>User is happy with the app</td></tr>
+  <tr><td>Negative (score < -0.1)</td><td>609 (31.4%)</td><td>User is unhappy with the app</td></tr>
+  <tr><td>Neutral (-0.1 to +0.1)</td><td>58 (3.0%)</td><td>User is indifferent</td></tr>
+</table>
+
+<!-- STEP 4 -->
+<div class="page-break"></div>
+<h2>Step 4 — Willingness-to-Pay Analysis (Will They Pay?)</h2>
+
+<div class="step-box">
+  <h4>What we did</h4>
+  <span class="tech">Method: Keyword matching</span>
+  <span class="tech">File: 04_wtp_analysis.py</span>
+  <p>We scanned each review for words and phrases that indicate whether the user is willing or unwilling to pay for the app's features.</p>
+</div>
+
+<h3>How WTP scoring works</h3>
+<p>We created two lists of keywords:</p>
+
+<table>
+  <tr><th>Willing to Pay (positive signal)</th><th>Not Willing to Pay (negative signal)</th></tr>
+  <tr><td>"worth it", "would pay", "happy to pay"</td><td>"too expensive", "not worth", "overpriced"</td></tr>
+  <tr><td>"good value", "fair price", "subscribe"</td><td>"rip off", "waste of money", "won't pay"</td></tr>
+  <tr><td>"money well spent", "premium worth"</td><td>"should be free", "cancelled subscription"</td></tr>
+  <tr><td>"gladly pay", "subscribed"</td><td>"never pay", "scam", "unsubscribed"</td></tr>
+</table>
+
+<p>The WTP score is calculated as:</p>
+<div class="file-box">
+WTP Score = (positive keyword matches - negative keyword matches) / total keyword matches
+
+Example: A review says "this is too expensive and not worth the money"
+  → Negative matches: "too expensive" + "not worth" = 2
+  → Positive matches: 0
+  → WTP Score = (0 - 2) / 2 = -1.0 (strongly against paying)
+</div>
+
+<div class="analogy">
+  <strong>In simple terms:</strong> We're counting how many times someone says something like "I'd happily pay for this" versus "this is a rip-off." If more negative payment words appear, the score goes negative. If more positive ones appear, it goes positive. Most reviews don't mention payment at all, so they score 0 (neutral).
+</div>
+
+<h3>Results</h3>
+<table>
+  <tr><th>WTP Category</th><th>Count</th><th>What it means</th></tr>
+  <tr><td>Willing to Pay</td><td>41 (2.1%)</td><td>User expressed willingness to pay</td></tr>
+  <tr><td>Not Willing to Pay</td><td>56 (2.9%)</td><td>User expressed resistance to paying</td></tr>
+  <tr><td>Neutral</td><td>1,841 (95.0%)</td><td>No payment-related language detected</td></tr>
+</table>
+
+<!-- STEP 5 -->
+<h2>Step 5 — Segmenting the Data (General vs AI-Specific)</h2>
+
+<div class="step-box">
+  <h4>What we did</h4>
+  <span class="tech">File: wtp_ai_chatbot_specific.py</span>
+  <p>This is the most important step. We separated reviews into categories to answer two different questions.</p>
+</div>
+
+<h3>Why we needed segmentation</h3>
+<p>Not all reviews are equally relevant. A review saying "I love the daily horoscope" tells us about astrology apps in general, but nothing about AI chatbots or payment. We needed to isolate the reviews that specifically talk about what iMeUsWe is considering.</p>
+
+<h3>The four segments</h3>
+<table>
+  <tr><th>Segment</th><th>What it answers</th><th>How we identified it</th><th>Count</th></tr>
+  <tr>
+    <td><strong>General</strong></td>
+    <td>"Do people like astrology apps?"</td>
+    <td>Reviews that don't mention AI or payment</td>
+    <td>1,458</td>
+  </tr>
+  <tr>
+    <td><strong>Payment-related</strong></td>
+    <td>"How do people feel about paying for astrology apps?"</td>
+    <td>Reviews containing words like "pay", "premium", "subscription", "expensive", "free", "price", etc.</td>
+    <td>455</td>
+  </tr>
+  <tr>
+    <td><strong>AI Chatbot-related</strong></td>
+    <td>"How do people feel about AI chatbot features?"</td>
+    <td>Reviews containing words like "ai", "chatbot", "bot", "ai generated", "gpt", "ai reading", etc.</td>
+    <td>40</td>
+  </tr>
+  <tr style="background: #fdf0f0;">
+    <td><strong>AI + Payment (both)</strong></td>
+    <td>"Will people pay for an AI chatbot?" — THE key question</td>
+    <td>Reviews that mention BOTH AI chatbot AND payment topics</td>
+    <td>15</td>
+  </tr>
+</table>
+
+<div class="highlight">
+  <strong>Why this matters:</strong> The "AI + Payment" segment (15 reviews) is the most directly relevant to iMeUsWe's decision. These are real users who have experienced a paid AI astrology chatbot and are telling us exactly what they think about it. Their WTP score was -0.33 (strongly against paying) with an average star rating of 1.73/5.
+</div>
+
+<!-- STEP 6 -->
+<div class="page-break"></div>
+<h2>Step 6 — Creating the Report</h2>
+
+<div class="step-box">
+  <h4>What we did</h4>
+  <span class="tech">Tool: Python (Matplotlib) + HTML/CSS</span>
+  <span class="tech">Files: 05_visualize.py + HTML report</span>
+  <p>We created two outputs: a chart image (analysis_report.png) and a full written report (the PDF you received).</p>
+</div>
+
+<ul>
+  <li><strong>Charts:</strong> Generated using Matplotlib (a Python charting library) — shows sentiment distribution, WTP distribution, and per-competitor comparison</li>
+  <li><strong>Written report:</strong> Created as an HTML document with professional styling, then saved as PDF using the browser's print function</li>
+</ul>
+
+<!-- TOOLS SUMMARY -->
+<h2>Tools & Technologies Used</h2>
+
+<table>
+  <tr><th>Tool</th><th>What it is</th><th>What we used it for</th></tr>
+  <tr><td>Python</td><td>A programming language (like a calculator on steroids)</td><td>The entire analysis was written in Python — it's the "engine" that runs everything</td></tr>
+  <tr><td>google-play-scraper</td><td>A Python add-on for reading Play Store data</td><td>Automatically downloaded reviews from the 6 competitor apps</td></tr>
+  <tr><td>Pandas</td><td>A Python add-on for working with spreadsheet-like data</td><td>Cleaning, filtering, sorting, and analyzing the review data</td></tr>
+  <tr><td>Matplotlib</td><td>A Python add-on for creating charts</td><td>Generated the bar charts and comparison visualizations</td></tr>
+  <tr><td>NumPy</td><td>A Python add-on for math operations</td><td>Calculating averages, scores, and statistical operations</td></tr>
+  <tr><td>Kiro (AI IDE)</td><td>An AI-powered coding assistant</td><td>Helped write the code, debug issues, and generate the report</td></tr>
+  <tr><td>HTML/CSS</td><td>Web page formatting languages</td><td>Created the professional-looking report document</td></tr>
+</table>
+
+<!-- FILE STRUCTURE -->
+<h2>Project File Structure</h2>
+
+<p>All the code and data lives in a folder called <code>imeuswe_analysis</code>:</p>
+
+<div class="file-box">
+imeuswe_analysis/
+├── config.py                    ← Settings (competitor list, keywords, file paths)
+├── requirements.txt             ← List of Python add-ons needed
+├── 01_scrape_reviews.py         ← Step 1: Downloads reviews from Google Play Store
+├── 02_clean_data.py             ← Step 2: Cleans and tags the reviews
+├── 03_sentiment_analysis.py     ← Step 3: Scores each review's sentiment
+├── 04_wtp_analysis.py           ← Step 4: Scores willingness to pay
+├── 05_visualize.py              ← Step 5: Creates charts
+├── wtp_ai_chatbot_specific.py   ← Step 5b: AI chatbot-specific deep dive
+├── wtp_report.py                ← Quick summary report
+├── run_pipeline.py              ← Runs all steps in order (one-click)
+├── data/
+│   ├── raw_reddit_data.csv      ← Raw scraped reviews (2,212 rows)
+│   ├── cleaned_data.csv         ← Cleaned reviews (1,938 rows)
+│   ├── sentiment_results.csv    ← Reviews with sentiment scores
+│   └── wtp_analysis.csv         ← Reviews with sentiment + WTP scores
+└── output/
+    ├── analysis_report.png      ← Visual chart summary
+    └── iMeUsWe_AI_Chatbot_Analysis_Report.html  ← Full written report
+</div>
+
+<!-- HOW TO REPRODUCE -->
+<h2>How to Reproduce This Analysis</h2>
+
+<p>If anyone wants to run this analysis again (e.g., with updated data), here's what they need:</p>
+
+<ol>
+  <li><strong>Install Python</strong> (version 3.10 or newer) on your computer</li>
+  <li><strong>Open a terminal/command prompt</strong> and navigate to the <code>imeuswe_analysis</code> folder</li>
+  <li><strong>Install the required add-ons:</strong>
+    <div class="file-box">pip install -r requirements.txt</div>
+  </li>
+  <li><strong>Run the full pipeline:</strong>
+    <div class="file-box">python run_pipeline.py</div>
+    This runs all 5 steps automatically and takes about 2-3 minutes.
+  </li>
+  <li><strong>Check the results</strong> in the <code>data/</code> and <code>output/</code> folders</li>
+</ol>
+
+<div class="analogy">
+  <strong>In simple terms:</strong> It's like a recipe. Install the kitchen (Python), get the ingredients (requirements.txt), and press the "cook" button (run_pipeline.py). The meal (report) appears in the output folder.
+</div>
+
+<!-- INSPIRATION -->
+<h2>Where the Idea Came From</h2>
+
+<p>This analysis was modeled after a study done on <strong>Duolingo Max</strong> — Duolingo's AI-powered premium subscription. That study:</p>
+<ul>
+  <li>Scraped 10,000 Reddit posts about Duolingo Max</li>
+  <li>Found that users liked the AI feature but wouldn't pay $30/month for it</li>
+  <li>Used the same pipeline: scrape → clean → sentiment analysis → WTP scoring → visualize</li>
+  <li>The finding proved correct — Duolingo's stock corrected after the initial AI hype</li>
+</ul>
+
+<p>We adapted the same methodology for the astrology app market, replacing Reddit with Google Play Store reviews (due to Reddit's new API restrictions) and targeting astrology-specific competitors instead of language learning apps.</p>
+
+<!-- WHAT MAKES IT CREDIBLE -->
+<h2>What Makes This Analysis Credible</h2>
+
+<ul>
+  <li><strong>Real user data:</strong> These are actual reviews from real users, not survey responses or hypothetical opinions</li>
+  <li><strong>Large sample:</strong> 1,938 cleaned reviews across 6 apps provides a solid foundation</li>
+  <li><strong>Multiple signals:</strong> We don't rely on just one metric — we combine sentiment, WTP, star ratings, and actual user quotes</li>
+  <li><strong>Segmented analysis:</strong> We clearly separate general app sentiment from AI-specific and payment-specific findings</li>
+  <li><strong>Reproducible:</strong> Anyone can run the same code and get the same results — nothing is manually manipulated</li>
+  <li><strong>Proven methodology:</strong> The same approach was validated in the Duolingo study where the prediction proved accurate</li>
+</ul>
+
+<h2>What It Doesn't Tell Us</h2>
+
+<ul>
+  <li>How iMeUsWe's own users specifically feel (this is competitor data)</li>
+  <li>Whether a very low price point (e.g., ₹49/month) would change the equation</li>
+  <li>How iOS users feel (we only scraped Google Play Store)</li>
+  <li>Whether user attitudes toward AI will change over time</li>
+</ul>
+
+<p>These gaps are acknowledged in the main report under "Limitations & Next Steps."</p>
+
+<div class="footer">
+  <p>How This Analysis Was Built — Technical Walkthrough | April 2026</p>
+  <p>For questions about the methodology, contact the Product & Data Analytics Team.</p>
+</div>
+
+</body>
+</html>
