@@ -1,0 +1,320 @@
+{
+  "apps": [
+    {
+      "app_name": "23andMe",
+      "category": "ancestry",
+      "market_region": "global",
+      "avg_star_rating": 4.49,
+      "total_review_count": 13211,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "family_tree",
+        "dna_testing",
+        "family_stories",
+        "migration_history",
+        "vanshavali"
+      ]
+    },
+    {
+      "app_name": "Ancestry",
+      "category": "ancestry",
+      "market_region": "global",
+      "avg_star_rating": 3.86,
+      "total_review_count": 33545,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "family_tree",
+        "family_stories",
+        "dna_testing",
+        "historical_records",
+        "photo_storage"
+      ]
+    },
+    {
+      "app_name": "Astro Future",
+      "category": "astrology",
+      "market_region": "global",
+      "avg_star_rating": 3.76,
+      "total_review_count": 82,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "janam_patri",
+        "tarot"
+      ]
+    },
+    {
+      "app_name": "AstroSage",
+      "category": "astrology",
+      "market_region": "india",
+      "avg_star_rating": 3.76,
+      "total_review_count": 5871,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "kundli",
+        "horoscope",
+        "rashi",
+        "dasha",
+        "janam_patri"
+      ]
+    },
+    {
+      "app_name": "Astrotalk",
+      "category": "astrology",
+      "market_region": "india",
+      "avg_star_rating": 3.87,
+      "total_review_count": 144517,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "remedies",
+        "kundli",
+        "horoscope",
+        "tarot",
+        "pooja"
+      ]
+    },
+    {
+      "app_name": "Astroyogi",
+      "category": "astrology",
+      "market_region": "both",
+      "avg_star_rating": 4.48,
+      "total_review_count": 63133,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "tarot",
+        "kundli",
+        "numerology",
+        "janam_patri"
+      ]
+    },
+    {
+      "app_name": "BanyanTree - Family App",
+      "category": "ancestry",
+      "market_region": "india",
+      "avg_star_rating": null,
+      "total_review_count": 0,
+      "dominant_sentiment": "unknown",
+      "top_features": []
+    },
+    {
+      "app_name": "Co-Star",
+      "category": "astrology",
+      "market_region": "global",
+      "avg_star_rating": 4.15,
+      "total_review_count": 18960,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "zodiac",
+        "janam_patri",
+        "gochar",
+        "rashi"
+      ]
+    },
+    {
+      "app_name": "FamilySearch",
+      "category": "ancestry",
+      "market_region": "global",
+      "avg_star_rating": 3.99,
+      "total_review_count": 5715,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "family_tree",
+        "family_stories",
+        "photo_storage",
+        "historical_records",
+        "dna_testing"
+      ]
+    },
+    {
+      "app_name": "FindMyPast",
+      "category": "ancestry",
+      "market_region": "global",
+      "avg_star_rating": 2.53,
+      "total_review_count": 392,
+      "dominant_sentiment": "negative",
+      "top_features": [
+        "family_tree",
+        "family_stories",
+        "historical_records"
+      ]
+    },
+    {
+      "app_name": "InstaAstro",
+      "category": "astrology",
+      "market_region": "india",
+      "avg_star_rating": 4.52,
+      "total_review_count": 25211,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "tarot",
+        "kundli",
+        "remedies",
+        "janam_patri"
+      ]
+    },
+    {
+      "app_name": "Jyotish - Vedic Astrology",
+      "category": "astrology",
+      "market_region": "india",
+      "avg_star_rating": 4.56,
+      "total_review_count": 3598,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "gochar",
+        "dasha",
+        "kundli",
+        "panchang"
+      ]
+    },
+    {
+      "app_name": "Kuldevi - Family Tree",
+      "category": "ancestry",
+      "market_region": "india",
+      "avg_star_rating": null,
+      "total_review_count": 0,
+      "dominant_sentiment": "unknown",
+      "top_features": []
+    },
+    {
+      "app_name": "Kundli Software",
+      "category": "astrology",
+      "market_region": "india",
+      "avg_star_rating": 3.76,
+      "total_review_count": 5871,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "kundli",
+        "horoscope",
+        "rashi",
+        "dasha",
+        "janam_patri"
+      ]
+    },
+    {
+      "app_name": "Kundli by Drik Panchang",
+      "category": "astrology",
+      "market_region": "india",
+      "avg_star_rating": 4.52,
+      "total_review_count": 16132,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "panchang",
+        "kundli",
+        "muhurat",
+        "rashi",
+        "nakshatra"
+      ]
+    },
+    {
+      "app_name": "MyHeritage",
+      "category": "ancestry",
+      "market_region": "global",
+      "avg_star_rating": 3.29,
+      "total_review_count": 17550,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "family_tree",
+        "dna_testing",
+        "family_stories",
+        "photo_storage",
+        "historical_records"
+      ]
+    },
+    {
+      "app_name": "Sanctuary Astrology",
+      "category": "astrology",
+      "market_region": "global",
+      "avg_star_rating": 4.29,
+      "total_review_count": 2305,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "tarot",
+        "janam_patri",
+        "zodiac",
+        "gochar"
+      ]
+    },
+    {
+      "app_name": "The Pattern",
+      "category": "astrology",
+      "market_region": "global",
+      "avg_star_rating": 3.63,
+      "total_review_count": 9168,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "gochar",
+        "janam_patri",
+        "rashi",
+        "zodiac"
+      ]
+    },
+    {
+      "app_name": "Yodha My Astrology",
+      "category": "astrology",
+      "market_region": "global",
+      "avg_star_rating": 4.62,
+      "total_review_count": 35697,
+      "dominant_sentiment": "positive",
+      "top_features": [
+        "horoscope",
+        "remedies",
+        "janam_patri",
+        "kundli",
+        "zodiac"
+      ]
+    }
+  ],
+  "market_gaps": [
+    {
+      "description": "No existing app combines family tree/ancestry context with astrology features",
+      "opportunity": "A 'family astrology' platform that uses family context (tree, stories, birth details) to guide life decisions via astrology"
+    },
+    {
+      "description": "Astrology apps lack family tree or lineage features",
+      "opportunity": "Integrating family context (gotra, vanshavali, ancestral data) into astrology predictions"
+    },
+    {
+      "description": "Ancestry apps lack astrology or spiritual guidance features",
+      "opportunity": "Adding kundli, rashi, or spiritual guidance to family tree platforms"
+    }
+  ],
+  "top_astrology_features": [
+    {
+      "feature": "numerology",
+      "avg_sentiment": 0.4588
+    },
+    {
+      "feature": "panchang",
+      "avg_sentiment": 0.427
+    },
+    {
+      "feature": "tarot",
+      "avg_sentiment": 0.4094
+    },
+    {
+      "feature": "health_prediction",
+      "avg_sentiment": 0.4019
+    },
+    {
+      "feature": "horoscope",
+      "avg_sentiment": 0.3791
+    }
+  ],
+  "top_ancestry_features": [
+    {
+      "feature": "vanshavali",
+      "avg_sentiment": 0.4305
+    },
+    {
+      "feature": "family_stories",
+      "avg_sentiment": 0.4132
+    }
+  ],
+  "hybrid_apps": []
+}
