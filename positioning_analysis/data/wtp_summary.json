@@ -1,0 +1,275 @@
+{
+  "per_category": {
+    "astrology": {
+      "total_reviews": 330545,
+      "reviews_with_wtp": 6217,
+      "wtp_pct": 1.88,
+      "positive_wtp_count": 458,
+      "negative_wtp_count": 6458,
+      "conditional_wtp_count": 65
+    },
+    "ancestry": {
+      "total_reviews": 70413,
+      "reviews_with_wtp": 1423,
+      "wtp_pct": 2.02,
+      "positive_wtp_count": 335,
+      "negative_wtp_count": 1238,
+      "conditional_wtp_count": 45
+    }
+  },
+  "per_region": {
+    "india": {
+      "total_reviews": 201200,
+      "reviews_with_wtp": 4915,
+      "wtp_pct": 2.44
+    },
+    "global": {
+      "total_reviews": 136625,
+      "reviews_with_wtp": 2018,
+      "wtp_pct": 1.48
+    },
+    "both": {
+      "total_reviews": 63133,
+      "reviews_with_wtp": 707,
+      "wtp_pct": 1.12
+    }
+  },
+  "top_features_willing_to_pay": [
+    {
+      "feature": "horoscope",
+      "positive_wtp_count": 8
+    },
+    {
+      "feature": "family_tree",
+      "positive_wtp_count": 7
+    },
+    {
+      "feature": "dna_testing",
+      "positive_wtp_count": 6
+    },
+    {
+      "feature": "family_stories",
+      "positive_wtp_count": 5
+    },
+    {
+      "feature": "gemstone",
+      "positive_wtp_count": 3
+    },
+    {
+      "feature": "remedies",
+      "positive_wtp_count": 3
+    },
+    {
+      "feature": "tarot",
+      "positive_wtp_count": 2
+    },
+    {
+      "feature": "pooja",
+      "positive_wtp_count": 1
+    },
+    {
+      "feature": "kundli",
+      "positive_wtp_count": 1
+    },
+    {
+      "feature": "janam_patri",
+      "positive_wtp_count": 1
+    }
+  ],
+  "top_pricing_complaints": [
+    {
+      "feature": "kundli",
+      "negative_wtp_count": 42
+    },
+    {
+      "feature": "remedies",
+      "negative_wtp_count": 38
+    },
+    {
+      "feature": "dna_testing",
+      "negative_wtp_count": 20
+    },
+    {
+      "feature": "horoscope",
+      "negative_wtp_count": 14
+    },
+    {
+      "feature": "pooja",
+      "negative_wtp_count": 13
+    },
+    {
+      "feature": "tarot",
+      "negative_wtp_count": 13
+    },
+    {
+      "feature": "family_tree",
+      "negative_wtp_count": 11
+    },
+    {
+      "feature": "rashi",
+      "negative_wtp_count": 5
+    },
+    {
+      "feature": "gemstone",
+      "negative_wtp_count": 5
+    },
+    {
+      "feature": "marriage_compatibility",
+      "negative_wtp_count": 3
+    }
+  ],
+  "monetization_models": {
+    "Astrotalk": {
+      "model": "subscription",
+      "confidence": 0.88
+    },
+    "Co-Star": {
+      "model": "subscription",
+      "confidence": 0.6226
+    },
+    "The Pattern": {
+      "model": "subscription",
+      "confidence": 0.8683
+    },
+    "Kundli Software": {
+      "model": "subscription",
+      "confidence": 0.7
+    },
+    "AstroSage": {
+      "model": "subscription",
+      "confidence": 0.7
+    },
+    "Jyotish - Vedic Astrology": {
+      "model": "subscription",
+      "confidence": 0.75
+    },
+    "InstaAstro": {
+      "model": "subscription",
+      "confidence": 0.8049
+    },
+    "Astroyogi": {
+      "model": "subscription",
+      "confidence": 0.9472
+    },
+    "Sanctuary Astrology": {
+      "model": "subscription",
+      "confidence": 0.9231
+    },
+    "Yodha My Astrology": {
+      "model": "subscription",
+      "confidence": 0.8851
+    },
+    "Astro Future": {
+      "model": "subscription",
+      "confidence": 0.8182
+    },
+    "Kundli by Drik Panchang": {
+      "model": "subscription",
+      "confidence": 0.7435
+    },
+    "Ancestry": {
+      "model": "subscription",
+      "confidence": 0.9579
+    },
+    "MyHeritage": {
+      "model": "subscription",
+      "confidence": 0.952
+    },
+    "FamilySearch": {
+      "model": "subscription",
+      "confidence": 0.875
+    },
+    "FindMyPast": {
+      "model": "subscription",
+      "confidence": 0.963
+    },
+    "23andMe": {
+      "model": "subscription",
+      "confidence": 0.9365
+    }
+  },
+  "cross_category_monetization": {
+    "ancestry_to_astrology_wtp": {
+      "count": 0,
+      "features": []
+    },
+    "astrology_to_ancestry_wtp": {
+      "count": 0,
+      "features": []
+    }
+  },
+  "family_tree_specific_wtp": {
+    "total_signals": 60,
+    "positive": 19,
+    "negative": 37,
+    "top_features": [
+      {
+        "feature": "dna_testing",
+        "count": 27
+      },
+      {
+        "feature": "family_tree",
+        "count": 21
+      },
+      {
+        "feature": "family_stories",
+        "count": 8
+      },
+      {
+        "feature": "historical_records",
+        "count": 3
+      },
+      {
+        "feature": "photo_storage",
+        "count": 1
+      }
+    ]
+  },
+  "astrology_specific_wtp": {
+    "total_signals": 159,
+    "positive": 21,
+    "negative": 137,
+    "top_features": [
+      {
+        "feature": "kundli",
+        "count": 43
+      },
+      {
+        "feature": "remedies",
+        "count": 41
+      },
+      {
+        "feature": "horoscope",
+        "count": 22
+      },
+      {
+        "feature": "tarot",
+        "count": 16
+      },
+      {
+        "feature": "pooja",
+        "count": 14
+      },
+      {
+        "feature": "gemstone",
+        "count": 8
+      },
+      {
+        "feature": "rashi",
+        "count": 5
+      },
+      {
+        "feature": "marriage_compatibility",
+        "count": 3
+      },
+      {
+        "feature": "zodiac",
+        "count": 2
+      },
+      {
+        "feature": "janam_patri",
+        "count": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+google-play-scraper
+beautifulsoup4
+requests
+pandas
+nltk
+vaderSentiment
+googletrans==4.0.0-rc1
+langdetect
+plotly
+pytest
+hypothesis

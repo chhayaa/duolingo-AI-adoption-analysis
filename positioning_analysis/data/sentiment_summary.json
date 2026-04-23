@@ -1,0 +1,193 @@
+{
+  "per_app": {
+    "23andMe": {
+      "avg_score": 0.6388,
+      "positive_pct": 90.0,
+      "negative_pct": 8.85,
+      "neutral_pct": 1.15,
+      "review_count": 13211
+    },
+    "Ancestry": {
+      "avg_score": 0.4013,
+      "positive_pct": 73.1,
+      "negative_pct": 24.34,
+      "neutral_pct": 2.56,
+      "review_count": 33545
+    },
+    "Astro Future": {
+      "avg_score": 0.4074,
+      "positive_pct": 71.95,
+      "negative_pct": 24.39,
+      "neutral_pct": 3.66,
+      "review_count": 82
+    },
+    "AstroSage": {
+      "avg_score": 0.3529,
+      "positive_pct": 70.52,
+      "negative_pct": 26.59,
+      "neutral_pct": 2.9,
+      "review_count": 5871
+    },
+    "Astrotalk": {
+      "avg_score": 0.4067,
+      "positive_pct": 72.41,
+      "negative_pct": 26.91,
+      "neutral_pct": 0.68,
+      "review_count": 144517
+    },
+    "Astroyogi": {
+      "avg_score": 0.6603,
+      "positive_pct": 87.47,
+      "negative_pct": 12.3,
+      "neutral_pct": 0.24,
+      "review_count": 63133
+    },
+    "Co-Star": {
+      "avg_score": 0.5167,
+      "positive_pct": 81.0,
+      "negative_pct": 17.4,
+      "neutral_pct": 1.6,
+      "review_count": 18960
+    },
+    "FamilySearch": {
+      "avg_score": 0.4578,
+      "positive_pct": 75.38,
+      "negative_pct": 22.05,
+      "neutral_pct": 2.57,
+      "review_count": 5715
+    },
+    "FindMyPast": {
+      "avg_score": -0.1094,
+      "positive_pct": 36.73,
+      "negative_pct": 60.2,
+      "neutral_pct": 3.06,
+      "review_count": 392
+    },
+    "InstaAstro": {
+      "avg_score": 0.671,
+      "positive_pct": 88.69,
+      "negative_pct": 10.97,
+      "neutral_pct": 0.35,
+      "review_count": 25211
+    },
+    "Jyotish - Vedic Astrology": {
+      "avg_score": 0.6974,
+      "positive_pct": 92.16,
+      "negative_pct": 6.17,
+      "neutral_pct": 1.67,
+      "review_count": 3598
+    },
+    "Kundli Software": {
+      "avg_score": 0.3531,
+      "positive_pct": 70.52,
+      "negative_pct": 26.57,
+      "neutral_pct": 2.91,
+      "review_count": 5871
+    },
+    "Kundli by Drik Panchang": {
+      "avg_score": 0.6786,
+      "positive_pct": 90.58,
+      "negative_pct": 7.27,
+      "neutral_pct": 2.16,
+      "review_count": 16132
+    },
+    "MyHeritage": {
+      "avg_score": 0.1799,
+      "positive_pct": 58.1,
+      "negative_pct": 39.99,
+      "neutral_pct": 1.91,
+      "review_count": 17550
+    },
+    "Sanctuary Astrology": {
+      "avg_score": 0.6008,
+      "positive_pct": 86.94,
+      "negative_pct": 10.85,
+      "neutral_pct": 2.21,
+      "review_count": 2305
+    },
+    "The Pattern": {
+      "avg_score": 0.3326,
+      "positive_pct": 66.93,
+      "negative_pct": 30.05,
+      "neutral_pct": 3.02,
+      "review_count": 9168
+    },
+    "Yodha My Astrology": {
+      "avg_score": 0.69,
+      "positive_pct": 92.89,
+      "negative_pct": 6.49,
+      "neutral_pct": 0.62,
+      "review_count": 35697
+    }
+  },
+  "per_category": {
+    "ancestry": {
+      "avg_score": 0.3924,
+      "positive_pct": 72.52,
+      "negative_pct": 25.35,
+      "neutral_pct": 2.14,
+      "review_count": 70413
+    },
+    "astrology": {
+      "avg_score": 0.526,
+      "positive_pct": 80.22,
+      "negative_pct": 18.93,
+      "neutral_pct": 0.85,
+      "review_count": 330545
+    }
+  },
+  "per_region": {},
+  "top_praised_features": [
+    {
+      "feature": "numerology",
+      "avg_score": 0.4588,
+      "mention_count": 1119
+    },
+    {
+      "feature": "vanshavali",
+      "avg_score": 0.4305,
+      "mention_count": 26
+    },
+    {
+      "feature": "panchang",
+      "avg_score": 0.427,
+      "mention_count": 2574
+    },
+    {
+      "feature": "family_stories",
+      "avg_score": 0.4132,
+      "mention_count": 1565
+    },
+    {
+      "feature": "tarot",
+      "avg_score": 0.4094,
+      "mention_count": 4371
+    },
+    {
+      "feature": "health_prediction",
+      "avg_score": 0.4019,
+      "mention_count": 1
+    },
+    {
+      "feature": "horoscope",
+      "avg_score": 0.3791,
+      "mention_count": 8531
+    },
+    {
+      "feature": "career_prediction",
+      "avg_score": 0.3775,
+      "mention_count": 34
+    },
+    {
+      "feature": "vastu",
+      "avg_score": 0.3656,
+      "mention_count": 397
+    },
+    {
+      "feature": "kundli",
+      "avg_score": 0.3635,
+      "mention_count": 5992
+    }
+  ],
+  "top_criticized_features": []
+}

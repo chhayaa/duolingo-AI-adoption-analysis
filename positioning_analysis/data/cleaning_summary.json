@@ -1,0 +1,25 @@
+{
+  "total_collected": 617875,
+  "duplicates_removed": 191780,
+  "short_reviews_discarded": 25137,
+  "final_count": 400958,
+  "per_app_counts": {
+    "Astrotalk": 144517,
+    "Astroyogi": 63133,
+    "Yodha My Astrology": 35697,
+    "Ancestry": 33545,
+    "InstaAstro": 25211,
+    "Co-Star": 18960,
+    "MyHeritage": 17550,
+    "Kundli by Drik Panchang": 16132,
+    "23andMe": 13211,
+    "The Pattern": 9168,
+    "AstroSage": 5871,
+    "Kundli Software": 5871,
+    "FamilySearch": 5715,
+    "Jyotish - Vedic Astrology": 3598,
+    "Sanctuary Astrology": 2305,
+    "FindMyPast": 392,
+    "Astro Future": 82
+  }
+}

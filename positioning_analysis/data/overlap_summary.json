@@ -1,0 +1,64 @@
+{
+  "astrology_to_ancestry_pct": 0.01,
+  "ancestry_to_astrology_pct": 0.01,
+  "top_cross_features_astrology_to_ancestry": [
+    {
+      "feature": "kul",
+      "count": 6
+    },
+    {
+      "feature": "gotra",
+      "count": 5
+    },
+    {
+      "feature": "ancestors",
+      "count": 4
+    },
+    {
+      "feature": "heritage",
+      "count": 2
+    },
+    {
+      "feature": "family tree",
+      "count": 2
+    },
+    {
+      "feature": "generational",
+      "count": 1
+    },
+    {
+      "feature": "pitru",
+      "count": 1
+    },
+    {
+      "feature": "pitru dosha",
+      "count": 1
+    },
+    {
+      "feature": "forefathers",
+      "count": 1
+    },
+    {
+      "feature": "ancestry",
+      "count": 1
+    }
+  ],
+  "top_cross_features_ancestry_to_astrology": [
+    {
+      "feature": "spiritual",
+      "count": 5
+    },
+    {
+      "feature": "karma",
+      "count": 2
+    },
+    {
+      "feature": "horoscope",
+      "count": 1
+    },
+    {
+      "feature": "destiny",
+      "count": 1
+    }
+  ]
+}
