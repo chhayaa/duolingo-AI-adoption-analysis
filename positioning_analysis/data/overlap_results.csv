@@ -1,0 +1,35 @@
+review_id,app_name,source_category,target_category,signal_text,cross_feature
+9f9093aa-3920-4029-a1e4-5bfef284cf59,Astrotalk,astrology,ancestry,generational,generational
+77664ef5-ae44-4a34-a961-fdb65bfb059f,Astrotalk,astrology,ancestry,kul,kul
+7f3f457e-d9e9-4de6-9ffa-57a8a88b71b3,Astrotalk,astrology,ancestry,gotra,gotra
+6e008866-1348-4ff0-acf0-801abff6158f,Astrotalk,astrology,ancestry,gotra,gotra
+42f1eefd-9347-47d2-8f3f-5199ca7ba5dd,Astrotalk,astrology,ancestry,kul,kul
+2dc08896-3949-4f31-8526-edac748446e9,Astrotalk,astrology,ancestry,kul,kul
+69b60b4b-7bea-4652-8c12-f7ec6b295d4b,Astrotalk,astrology,ancestry,gotra,gotra
+0093d39d-1186-4c5c-82b8-8983005994e7,Astrotalk,astrology,ancestry,gotra,gotra
+eee8bca1-4953-4a20-ba98-cf57a09f919d,Astrotalk,astrology,ancestry,kul,kul
+9cc1b639-8cc9-41fd-a266-92be26def677,Astrotalk,astrology,ancestry,ancestors,ancestors
+bac2ac67-ca6e-4994-9b05-1c3d826ebd8e,Jyotish - Vedic Astrology,astrology,ancestry,pitru,pitru
+bac2ac67-ca6e-4994-9b05-1c3d826ebd8e,Jyotish - Vedic Astrology,astrology,ancestry,pitru dosha,pitru dosha
+52af89c1-cf1a-4b18-a4b2-0c30c110c4a5,Astroyogi,astrology,ancestry,kul,kul
+372c4498-f141-422a-aebb-15def9d8c7e2,Astroyogi,astrology,ancestry,kul,kul
+cc369838-f9b5-4bf4-bf00-d36df68de1a8,Astroyogi,astrology,ancestry,heritage,heritage
+39074ef5-5525-4100-8dca-afafab65c418,Yodha My Astrology,astrology,ancestry,forefathers,forefathers
+c2b971a3-e1ea-419e-909d-b7ee9963dbe9,Yodha My Astrology,astrology,ancestry,ancestry,ancestry
+f6c00d6f-3d8d-4d28-bda0-49a9eb208e4d,Kundli by Drik Panchang,astrology,ancestry,gotra,gotra
+d9291b98-7410-41fe-8f05-fb595101c3ca,Kundli by Drik Panchang,astrology,ancestry,ancestors,ancestors
+7edc37d9-21b2-4446-b733-f48a5a9b46b2,Kundli by Drik Panchang,astrology,ancestry,lineage,lineage
+2e335b19-6b34-4906-8857-58f9bdd39f5d,Kundli by Drik Panchang,astrology,ancestry,family tree,family tree
+ab8a5d83-8913-449c-839e-e5334bbb1027,Kundli by Drik Panchang,astrology,ancestry,ancestors,ancestors
+0aa65b18-f7ad-4fe2-a398-dffcc35d66ca,Kundli by Drik Panchang,astrology,ancestry,ancestors,ancestors
+18041aa9-dc2a-43d4-bd3b-d947a440df36,Kundli by Drik Panchang,astrology,ancestry,heritage,heritage
+d2a49998-9b64-4106-acef-10a2f1c2f014,Kundli by Drik Panchang,astrology,ancestry,family tree,family tree
+d12b4b1c-93c2-4e5b-9b97-3e9d5c1093c3,Ancestry,ancestry,astrology,spiritual,spiritual
+fba3974d-8d47-4f99-ad02-4f0fa6d38741,Ancestry,ancestry,astrology,horoscope,horoscope
+43ceecc3-48b0-4771-b7a6-2b43e4c8048d,Ancestry,ancestry,astrology,spiritual,spiritual
+842d6827-ce76-464b-bd20-ae256002be40,MyHeritage,ancestry,astrology,destiny,destiny
+4049fba1-9f32-42b9-ae2a-cf526372e265,MyHeritage,ancestry,astrology,karma,karma
+7cf2aa08-6fcc-483e-a300-36f033624013,FamilySearch,ancestry,astrology,karma,karma
+ca9e0900-2d8b-4825-9ceb-3811947ecfce,FamilySearch,ancestry,astrology,spiritual,spiritual
+96e8ae94-e282-4201-ac40-81ace31f5de6,FamilySearch,ancestry,astrology,spiritual,spiritual
+82e101fc-8b09-42e4-a3c9-ff6303aee788,FamilySearch,ancestry,astrology,spiritual,spiritual
